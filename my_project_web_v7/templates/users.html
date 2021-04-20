@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{header}}</h2>
+    <table class="table-primary align-middle table-bordered">
+    	<tr class="table-primary">
+    		<td class="table-primary">Id игрока</td>
+    		<td class="table-primary">Имя игрока</td>
+    		<td class="table-primary">E-mail</td>
+    		<td class="table-primary">Дата, время регистрации</td>
+    	</tr>
+        {% for i in users %}
+    	<tr>
+    		<td class="table-primary">{{ i.id }}</td>
+    		<td class="table-primary">{{ i.name }}</td>
+    		<td class="table-primary">{{ i.email }}</td>
+    		<td class="table-primary">{{ i.reg_date }}</td>
+    	</tr>
+    	{% endfor %}
+    </table>
+{% endblock %}
+{% block buttons %}
+{% endblock %}

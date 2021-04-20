@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <h1>Ваш ход №{{number}}</h1>
+<form action=""" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.move.label }}<br>
+        {{ form.move(class="form-control") }}<br>
+        {% for error in form.move.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+<p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+   <h5>{{message}}</h5>
+</form>
+{% for i in history %}
+   {{i}}<br>
+{% endfor %}
+<a class="btn btn-primary " href="/move?history=1">Показать историю</a>
+<a class="btn btn-secondary " href="/move?history=0">Скрыть историю</a>
+{% endblock %}

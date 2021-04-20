@@ -1,0 +1,14 @@
+h1, h4, h2, form, table{
+	margin: auto;
+	text-align: center;
+	max-width: 640px;
+}
+a{
+	float: right;
+	text-align: top;
+	max-width: 200px;
+}
+div{
+    align: center;
+    margin: 20px;
+}

@@ -1,0 +1,35 @@
+from flask import Flask, redirect, render_template
+from flask_login import LoginManager, login_user, login_required, current_user, logout_user
+from flask import jsonify
+from flask import request
+from flask_wtf import FlaskForm
+from flask_login import UserMixin
+from werkzeug.security import check_password_hash, generate_password_hash
+from wtforms import PasswordField, BooleanField, SubmitField
+from wtforms.fields.html5 import EmailField
+from wtforms.validators import DataRequired
+import sqlalchemy
+import sqlalchemy.orm
+from sqlalchemy.orm import Session
+import sqlalchemy.ext.declarative
+
+import datetime
+from random import randrange
+
+Собственные файлы:
+    main.py - основной файл, запускать нужно именно его
+    moveform.py, re_form.py, loginform.py - классы, описывающий формы ввода хода, регистрации и входа с систему
+
+    db/bulls.db - база данных, тестовый пользователь с правами админиcтратора 
+		      логин test@yandex.ru пароль TestAdmin
+
+    в папке templates содержатся 7 файлов вида *.html- шаблоны отображения информации, 
+        base.html - базовый для всех остальных
+        move.html - игра
+        index.html, login.html - регистрация и вход
+        users,html, records,html - показ пользователей и игр
+        remove.html - кнопки "удалить" и "оставить" для записей из базы
+        
+    В папке data ьодели данных records.py (class Record), users.py (class User) и описание подключения к базе данных db_session.py
+    
+    В папке static/css файл с описанием стилей style.css
